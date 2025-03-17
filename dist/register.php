@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="min-h-screen bg-gray-100 flex flex-col justify-center">
     <div class="bg-white max-w-xl mx-auto p-8 xl:p-12 w-1/2 rounded-lg shadow-lg">
-        <h2 class="text-3xl font-bold mb-2 text-center text-gray-600">Register</h2>
+        <h2 class="text-3xl font-bold mb-2 text-center text-black">Register</h2>
         <form method="POST" class="space-y-4">
             <div class="space-y-2">
                 <label for="username" class="block text-gray-500">Username</label>

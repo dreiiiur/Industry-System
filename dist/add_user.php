@@ -59,5 +59,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="user">User</option>
         <option value="admin">Admin</option>
     </select>
-    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-md">Create User</button>
+    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md">Create User</button>
 </form>

@@ -75,7 +75,7 @@ if (isset($_POST["password"]) && !empty($_POST["password"])) {
 <a class="text-white font-bold text-3xl md:text-4xl">Update Profile</a>
     <nav class="flex space-x-4 md:space-x-8">
         <a href="admin_home.php" class="text-white font-semibold px-4 py-2 rounded">Home</a>
-        <a href="admin_dashboard.php" class="text-white font-semibold px-4 py-2 rounded">User Management</a>
+        <a href="admin_dashboard.php" href="Home.php" class="text-white font-semibold px-4 py-2 rounded">User Management</a>
         <a href="profile.php" class="text-white font-semibold  px-4 py-2 rounded">Update Profile</a>
         <a href="logout.php" class="bg-red-600 text-white hover:bg-red-400 font-semibold px-4 py-2 rounded">Logout</a>
     </nav>

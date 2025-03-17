@@ -24,8 +24,9 @@ if (isset($_GET['delete'])) {
 }
 
 // Fetch all users
-$result = $conn->query("SELECT id, username, email, age, address, role FROM users");
+$result = $conn->query("SELECT id, username, email, age, address, role FROM users WHERE role != 'admin'");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +74,7 @@ $result = $conn->query("SELECT id, username, email, age, address, role FROM user
                     <td class="px-4 py-2"><?= htmlspecialchars($row['role']); ?></td>
                     <td class="px-4 py-2">
                         <a href="update_user.php?id=<?= $row['id']; ?>" class="text-blue-500 hover:text-blue-700">✏️ Edit</a>
-                        <a href="admin_dashboard.php?delete=<?= $row['id']; ?>" class="text-red-500 hover:text-red-700" onclick="return confirm('Are you sure?')">🗑️ Delete</a>
+                        <a href="admin_dashboard.php?delete=<?= $row['id']; ?>" class="text-red-500 hover:text-red-700" onclick="return confirm('Are you sure you want to delete this account?')">🗑️ Delete</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
