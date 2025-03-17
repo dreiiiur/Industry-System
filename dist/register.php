@@ -43,10 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<div class="min-h-screen bg-gray-100 flex flex-col justify-center">
-    <div class="bg-white max-w-xl mx-auto p-8 xl:p-12 w-1/2 rounded-lg shadow-lg">
-        <h2 class="text-3xl font-bold mb-2 text-center text-black">Register</h2>
+<div class="min-h-screen bg-gray-100 flex flex-col justify-center gap-4">
+    <div class="bg-white max-w-3xl mx-auto p-6 xl:p-12 w-1/2 rounded-lg shadow-lg gap-5">
+        <h2 class="text-3xl font-bold mb-4 text-start text-black">Register</h2>
         <form method="POST" class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
                 <label for="username" class="block text-gray-500">Username</label>
                 <input type="text" name="username" id="username" required class="block w-full px-4 py-3 border-2 border-gray-300 rounded-md">
@@ -55,10 +56,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="email" class="block text-gray-500">Email</label>
                 <input type="email" name="email" id="email" required class="block w-full px-4 py-3 border-2 border-gray-300 rounded-md">
             </div>
+            </div>
             <div class="space-y-2">
                 <label for="age" class="block text-gray-500">Age</label>
                 <input type="number" name="age" id="age" required class="block w-full px-4 py-3 border-2 border-gray-300 rounded-md">
             </div>
+           
             <div class="space-y-2">
                 <label for="address" class="block text-gray-500">Address</label>
                 <input type="text" name="address" id="address" required class="block w-full px-4 py-3 border-2 border-gray-300 rounded-md">

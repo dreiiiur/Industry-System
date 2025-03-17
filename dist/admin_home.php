@@ -25,8 +25,8 @@ $admin_role = isset($_SESSION["role"]) ? $_SESSION["role"] :"Admin";
     </nav>
 </header>
 <div class="flex items-start justify-start min-h-screen w-full bg-white text-white">
-    <div class="p-10 max-w-lg w-full">
-        <h1 class="text-4xl font-bold mb-4 text-gray-800">Welcome, <?= htmlspecialchars($admin_name); ?></h1>
+    <div class="p-8 max-w-auto w-full">
+        <h1 class="text-4xl font-bold mb-4 text-gray-800">Welcome, <?= htmlspecialchars($admin_role);?> <?= htmlspecialchars($admin_name); ?></h1>
         <p class="text-lg text-gray-700">We're glad to have you back!</p>
     </div>
 </div>
