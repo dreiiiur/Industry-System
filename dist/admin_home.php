@@ -40,7 +40,7 @@ $result = $stmt->get_result();
 <header class="bg-transparent flex justify-between items-center p-4 md:p-6 sticky top-0 z-50">
     <a class="text-blue-600 font-bold text-3xl md:text-4xl">Dashboard</a>
 </header>
-<div class="flex min-h-screen w-full bg-gray-100">
+<div class="flex min-h-screen flex-grow bg-gray-100">
     <!-- Sidebar -->
     <div class="w-64 bg-white p-4 text-[blue-600] flex flex-col">
         <nav class="flex flex-col gap-4 text-blue-600">
@@ -60,20 +60,39 @@ $result = $stmt->get_result();
     </div>
 
     <!-- Main Content -->
-    <div class="container mx-auto p-4">
-        <div class="flex flex-col justify-between items-start gap-6">
+    <div class="flex flex-col min-h-screen flex-grow bg-gray-100 mx-auto p-4">
+        <div class="flex flex-col justify-between items-start gap-6 w-auto">
+
             <!-- Accounts Overview -->
-            <h2 class="text-3xl font-bold mt-8 mb-4 text-blue-600">Accounts</h2>
-            <div class="bg-white rounded-2xl p-8 shadow-md">
+            <div class="flex flex-row space-x-4">
+            
+             <div class="flex flex-col ">
+             <h2 class="text-3xl font-bold mt-8 mb-4 text-blue-600">Accounts</h2>
+            <div class="bg-white rounded-3xl p-8 shadow-md">
                 <div class="flex flex-col items-center gap-4">
-                    <h3 class="text-2xl font-semibold text-blue-600">Total Accounts:</h3>
+                    <h3 class="text-2xl font-semibold text-gray-600">Total Accounts:</h3>
                     <h3 class="text-2xl font-bold text-blue-600"><?= $total_accounts; ?></h3>
-                </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Logs Overview -->
+            <div class="flex flex-r">
+            
+             <div class="flex flex-col">
+             <h2 class="text-3xl font-bold mt-8 mb-4 text-red-500">Logs</h2>
+            <div class="bg-white rounded-3xl p-8 shadow-md">
+                <div class="flex flex-col items-center gap-4">
+                    <h3 class="text-2xl font-semibold text-gray-600">Critical Tracks:</h3>
+                    <h3 class="text-2xl font-bold text-red-500"><?= $total_accounts; ?></h3>
+            </div>
+            </div>
+            </div>    
             </div>
         </div>
 
         <!-- Users Section -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mt-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg mt-6 w-full">
             <!-- Header Section -->
             <!-- Header Section -->
             <div class="flex items-center justify-between w-full mb-4">

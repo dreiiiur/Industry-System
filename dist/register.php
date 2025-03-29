@@ -43,9 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<div class="min-h-screen bg-gray-100 flex flex-col justify-center gap-4">
+<div class="min-h-screen bg-blue-600 flex flex-col justify-center gap-4">
     <div class="bg-white max-w-3xl mx-auto p-6 xl:p-12 w-1/2 rounded-lg shadow-lg gap-5">
-        <h2 class="text-3xl font-bold mb-4 text-start text-black">Register</h2>
+        <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Create an Account</h2>
         <form method="POST" class="space-y-4">
             <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <option value="admin">Admin</option>
                 </select>
             </div>
-            <button type="submit" class="block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md">Register</button>
+            <button type="submit" class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md">Register</button>
             <div class="text-center">
                 <a class="text-gray-500 hover:text-blue-500" href="login.php">Already have an account? Login</a>
             </div>
