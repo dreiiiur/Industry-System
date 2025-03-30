@@ -89,7 +89,7 @@ if (isset($_POST["password"]) && !empty($_POST["password"])) {
     </style>
 </head>
 <header class="bg-transparent flex justify-between items-center p-4 md:p-6">
-    <a class="text-blue-600 font-bold text-3xl md:text-4xl">Accounts</a>
+    <a class="text-blue-600 font-bold text-3xl md:text-4xl">Profile</a>
 </header>
 <main class="flex h-1/3 min-h-screen w-full bg-gray-100">
     <!-- Sidebar -->
@@ -112,7 +112,7 @@ if (isset($_POST["password"]) && !empty($_POST["password"])) {
 
     <div class="w-1/2 mx-auto mt-8">
         <div class=" bg-white p-8 rounded-lg shadow-lg space-y-4">
-        <h2 class="text-blue-600 text-2xl font-bold text-center mb-4">Update Profile</h2>
+        <h2 class="text-blue-600 text-3xl font-bold text-center mb-4">Update Profile</h2>
         <form method="POST" class="space-y-4">
             <div class="space-y-1">
                 <label for="username" class="block text-blue-600 font-medium">Username:</label>

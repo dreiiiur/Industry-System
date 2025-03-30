@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = trim($_POST["address"]);
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
+    $profile_picture = trim($_POST["profile_picture"]);
 
     // Ensure role is set correctly
     $role = isset($_POST["role"]) && ($_POST["role"] == "admin") ? "admin" : "user";
@@ -27,8 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert user into the database
-    $stmt = $conn->prepare("INSERT INTO users (username, email, age, address, password, role) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $username, $email, $age, $address, $hashed_password, $role);
+    $stmt = $conn->prepare("INSERT INTO users (username, email, age, address, password, role, profile_picture) VALUES (?, ?, ?, ?, ?, ?,?)");
+    $stmt->bind_param("sssssss", $username, $email, $age, $address, $hashed_password, $role, $profile_picture);
+
 
     if ($stmt->execute()) {
         echo "Registration successful!";
@@ -47,6 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="bg-white max-w-3xl mx-auto p-6 xl:p-12 w-1/2 rounded-lg shadow-lg gap-5">
         <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Create an Account</h2>
         <form method="POST" class="space-y-4">
+        <div class="space-y-2">
+                <label for="profile_picture" class="block text-gray-500">Profile Picture</label>
+                <input type="file" name="profile_picture" id="profile_picture" accept="image/*" required class="block w-full px-4 py-3 border-2 border-gray-300 rounded-md">
+            </div>
             <div class="grid grid-cols-2 gap-4">
             <div class="space-y-2">
                 <label for="username" class="block text-gray-500">Username</label>

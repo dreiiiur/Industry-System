@@ -2,6 +2,7 @@
 session_start();
 include("db.php");
 
+$admin_name = isset($_SESSION["username"]) ? $_SESSION["username"] :"Admin";
 // Check if 'id' exists in URL
 if (!isset($_GET["id"]) || empty($_GET["id"])) {
     die("Error: User ID not provided.");
@@ -71,28 +72,52 @@ if (isset($_POST["password"]) && !empty($_POST["password"])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<?php include("sidebar.php"); ?>
-    <div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg gap-">
-        <h2 class="text-2xl font-bold text-center mb-4">Update User</h2>
-        <form method="POST">
-            <div class="space-y-2">
+<header class="bg-transparent flex justify-between items-center p-4 md:p-6 sticky top-0 z-50">
+    <a class="text-blue-600 font-bold text-3xl md:text-4xl">Update User</a>
+</header>
+<div class="flex min-h-screen flex-grow bg-gray-100">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white p-4 text-[blue-600] flex flex-col">
+        <nav class="flex flex-col gap-4 text-blue-600">
+            <div class="flex items-center hover:bg-gray-200 text-white">
+                <img src="./../assets/admin-icon.png" alt="Profile Picture" class="w-8 h-8 rounded-full mr-2">
+                <a href="#" class="text-blue-600 font-bold px-4 py-2 rounded text-2xl ">Admin
+                    <?= htmlspecialchars($admin_name); ?></a>
+            </div>
+            <a href="admin_home.php"
+                class="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Home</a>
+            <a href="admin_dashboard.php"
+                class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Accounts</a>
+            <a href="profile.php"
+                class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Profile</a>
+            <a href="logout.php" class="text-white bg-red-500 px-4 py-2 rounded hover:bg-red-600 font-bold">Logout</a>
+        </nav>
+    </div>
+
+    <div class="flex-grow p-4 gap-4">
+    <div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg gap-6">
+        <h2 class=" text-blue-600 text-3xl font-bold text-center mb-6">Update User</h2>
+        <form method="POST" class="space-y-4">
+            <div class="">
                 <label for="username" class="block text-gray-700">Username:</label>
                 <input type="text" name="username" id="username" value="<?= htmlspecialchars($row['username']); ?>" required class="block w-full px-4 py-2 border-2 border-gray-300 rounded-md">
             </div>
-            <div class="space-y-2">
+            <div class="">
                 <label for="email" class="block text-gray-700">Email:</label>
                 <input type="email" name="email" id="email" value="<?= htmlspecialchars($row['email']); ?>" required class="block w-full px-4 py-2 border-2 border-gray-300 rounded-md">
             </div>
-            <div class="space-y-2">
+            <div class="">
                 <label for="age" class="block text-gray-700">Age:</label>
                 <input type="number" name="age" id="age" value="<?= htmlspecialchars($row['age']); ?>" required class="block w-full px-4 py-2 border-2 border-gray-300 rounded-md">
             </div>
-            <div class="space-y-2">
+            <div class="">
                 <label for="address" class="block text-gray-700">Address:</label>
                 <input type="text" name="address" id="address" value="<?= htmlspecialchars($row['address']); ?>" required class="block w-full px-4 py-2 border-2 border-gray-300 rounded-md">
             </div>
-            <button type="submit" class="block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Update</button>
+            <button type="submit" class=" w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md">Update</button>
         </form>
     </div>
+    </div>
+   
 </body>
 </html>
