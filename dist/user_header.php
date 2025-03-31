@@ -7,7 +7,7 @@
         <a class="text-blue-600 font-bold text-3xl md:text-4xl">User</a>
         <div class="font-semibold flex items-center gap-5 hover:text-black">
             <a href="home.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Home</a>
-            <a href="user_profile_update.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Profile</a>
+            <a href="user_profile.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Profile</a>
             <a href="logout.php" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</a>
         </div>
     </nav>

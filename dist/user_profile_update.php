@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
                 <label for="confirm_password" class="w-full md:w-1/3 mr-4 md:mr-0">Confirm Password:</label>
                 <input type="password" id="confirm_password" name="confirm_password" required class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-            <input type="submit" name="submit" value="Update Password" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg">
+            <input type="submit" name="submit" value="Update Information" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg">
         </form> 
     </div>
 </div>

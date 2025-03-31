@@ -40,27 +40,27 @@ $result = $stmt->get_result();
 <header class="bg-transparent flex justify-between items-center p-4 md:p-6 sticky top-0 z-50">
     <a class="text-blue-600 font-bold text-3xl md:text-4xl">Dashboard</a>
 </header>
-<div class="flex min-h-screen flex-grow bg-gray-100">
+<div class="flex min-h-screen flex-grow bg-gray-50">
     <!-- Sidebar -->
     <div class="w-64 bg-white p-4 text-[blue-600] flex flex-col">
         <nav class="flex flex-col gap-4 text-blue-600">
             <div class="flex items-center hover:bg-gray-200 text-white">
                 <img src="./../assets/admin-icon.png" alt="Profile Picture" class="w-8 h-8 rounded-full mr-2">
-                <a href="#" class="text-gray-600 font-bold px-4 py-2 rounded text-2xl ">Admin
+                <a href="#" class="text-blue-600 font-bold px-4 py-2 rounded text-2xl ">Admin
                     <?= htmlspecialchars($admin_name); ?></a>
             </div>
             <a href="admin_home.php"
                 class="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Home</a>
             <a href="admin_dashboard.php"
                 class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Accounts</a>
-            <a href="profile.php"
+            <a href="update_profile.php"
                 class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Profile</a>
             <a href="logout.php" class="text-white bg-red-500 px-4 py-2 rounded hover:bg-red-600 font-bold">Logout</a>
         </nav>
     </div>
 
     <!-- Main Content -->
-    <div class="flex flex-col min-h-screen flex-grow bg-gray-100 mx-auto p-4">
+    <div class="flex flex-col min-h-screen flex-grow mx-auto p-4">
         <div class="flex flex-col justify-between items-start gap-6 w-auto">
 
             <!-- Accounts Overview -->
@@ -121,7 +121,7 @@ $result = $stmt->get_result();
                 <!-- Table Section -->
                 <div class="overflow-x-auto p-6">
                     <table class="table-auto w-full text-center rounded-xl">
-                        <thead class="bg-blue-600 text-white mb-6">
+                        <thead class="bg-blue-600 text-white mb-6 rounded-xl">
                             <tr>
                                 <th class="px-6 py-3">ID</th>
                                 <th class="px-6 py-3">Username</th>
@@ -135,7 +135,7 @@ $result = $stmt->get_result();
                         <tbody class="space-y-4">
 
                             <?php while ($row = $result->fetch_assoc()): ?>
-                                <tr class="bg-white border-b">
+                                <tr class="bg-white">
                                     <td class="px-6 py-3 font-bold text-blue-600"><?= htmlspecialchars($row['id']); ?></td>
                                     <td class="px-6 py-3"><?= htmlspecialchars($row['username']); ?></td>
                                     <td class="px-6 py-3"><?= htmlspecialchars($row['email']); ?></td>

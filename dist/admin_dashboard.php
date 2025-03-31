@@ -36,7 +36,7 @@ $result = $conn->query("SELECT id, username, email, age, address, role FROM user
 <header class="bg-transparent flex justify-between items-center p-4 md:p-6 sticky top-0 z-50">
     <a class="text-blue-600 font-bold text-3xl md:text-4xl">Accounts</a>
 </header>
-<div class="flex min-h-screen w-full bg-gray-100">
+<div class="flex min-h-screen w-full bg-gray-50">
     <!-- Sidebar -->
     <div class="w-64 bg-white p-4 text-[blue-600] flex flex-col">
         <nav class="flex flex-col gap-4 text-blue-600">
@@ -82,7 +82,7 @@ $result = $conn->query("SELECT id, username, email, age, address, role FROM user
 
             <!-- Table Section -->
             <div class="bg-white rounded-2xl shadow-lg overflow-x-auto p-6">
-                <table class="table-auto w-full text-center rounded-xl shadow-lg">
+                <table class="table-auto w-full text-center rounded-xl shadow-sm">
                     <thead class="bg-blue-600 text-white mb-6">
                         <tr>
                             <th class="px-6 py-3">ID</th>
@@ -97,7 +97,7 @@ $result = $conn->query("SELECT id, username, email, age, address, role FROM user
                     <tbody class="space-y-4">
                         
                         <?php while ($row = $result->fetch_assoc()): ?>
-                            <tr class="bg-white border-b hover:bg-gray-100">
+                            <tr class="bg-white hover:bg-gray-100">
                                 <td class="px-6 py-3 font-bold text-blue-600"><?= htmlspecialchars($row['id']); ?></td>
                                 <td class="px-6 py-3"><?= htmlspecialchars($row['username']); ?></td>
                                 <td class="px-6 py-3"><?= htmlspecialchars($row['email']); ?></td>

@@ -63,9 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <?php echo htmlspecialchars($admin_name); ?></a>
             </div>
             <a href="admin_home.php"
-                class="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Home</a>
+                class="text-blue-600 font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Home</a>
             <a href="admin_dashboard.php"
-                class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Accounts</a>
+                class="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Accounts</a>
             <a href="profile.php"
                 class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Profile</a>
             <a href="logout.php" class="text-white bg-red-500 px-4 py-2 rounded hover:bg-red-600 font-bold">Logout</a>
