@@ -53,7 +53,7 @@ $result = $stmt->get_result();
                 class="bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Home</a>
             <a href="admin_dashboard.php"
                 class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Accounts</a>
-            <a href="update_profile.php"
+            <a href="profile.php"
                 class=" font-semibold px-4 py-2 rounded hover:bg-blue-700 hover:text-white">Profile</a>
             <a href="logout.php" class="text-white bg-red-500 px-4 py-2 rounded hover:bg-red-600 font-bold">Logout</a>
         </nav>
@@ -144,11 +144,11 @@ $result = $stmt->get_result();
                                     <td class="px-6 py-3"><?= htmlspecialchars($row['role']); ?></td>
                                     <td class="px-6 py-3 flex gap-4 justify-center">
                                         <a href="update_user.php?id=<?= $row['id']; ?>"
-                                            class="text-blue-500 hover:text-blue-700">✏️ Edit</a>
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a>
                                         <a href="admin_home.php?delete=<?= $row['id']; ?>"
-                                            class="text-red-500 hover:text-red-700"
-                                            onclick="return confirm('Are you sure you want to delete this account?')">🗑️
-                                            Delete</a>
+                                            class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+                                            onclick="return confirm('Are you sure you want to delete this account?')">
+                                        Delete</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

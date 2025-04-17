@@ -106,10 +106,10 @@ $result = $conn->query("SELECT id, username, email, age, address, role FROM user
                                 <td class="px-6 py-3"><?= htmlspecialchars($row['role']); ?></td>
                                 <td class="px-6 py-3 flex gap-4 justify-center">
                                     <a href="update_user.php?id=<?= $row['id']; ?>"
-                                        class="text-blue-500 hover:text-blue-700">✏️ Edit</a>
+                                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a>
                                     <a href="admin_home.php?delete=<?= $row['id']; ?>"
-                                        class="text-red-500 hover:text-red-700"
-                                        onclick="return confirm('Are you sure you want to delete this account?')">🗑️
+                                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                        onclick="return confirm('Are you sure you want to delete this account?')">
                                         Delete</a>
                                 </td>
                             </tr>

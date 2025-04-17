@@ -10,7 +10,11 @@ if (!isset($_SESSION["user_id"])) {
 // Get User's Name from Session (Ensure it is set)
 $user_name = isset($_SESSION["username"]) ? $_SESSION["username"] : "User"; 
 $user_role = isset($_SESSION["role"]) ? $_SESSION["role"] :"User";
+$user_email = isset($_SESSION["email"]) ? $_SESSION["email"] :"User";
+$user_address = isset($_SESSION["address"]) ? $_SESSION["address"] :"User";
+$user_age = isset($_SESSION["age"]) ? $_SESSION["age"] :"User";
 ?>
+
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="style.css">

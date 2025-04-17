@@ -7,6 +7,8 @@
 session_start();
 include("db.php");
 
+
+
 if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit();
@@ -22,6 +24,15 @@ if (isset($_POST['submit'])) {
     if (isset($_POST['password']) && !empty($_POST['password'])) {
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
+        $newUsername = trim($_POST["username"]);
+        $newEmail = trim($_POST["email"]);
+        $newAge = intval($_POST["age"]);
+        $newAddress = trim($_POST["address"]);
+        
+        $stmt = $conn->prepare("UPDATE users SET username = ?, email = ?, age = ?, address = ? WHERE id = ?");
+        $stmt->bind_param("ssisi", $newUsername, $newEmail, $newAge, $newAddress, $userId);
+        $stmt->execute();
+        $stmt->close();
 
         if ($password === $confirm_password) {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -37,6 +48,9 @@ if (isset($_POST['submit'])) {
         echo "Error: Password field is empty!";
     }
 }
+$stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
 ?>
 
     <?php include("user_header.php"); ?>
@@ -46,11 +60,18 @@ if (isset($_POST['submit'])) {
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="space-y-6">
             <div class="flex flex-col md:flex-row items-center">
                 <label for="name" class="w-full md:w-1/3 mr-4 md:mr-0">Name:</label>
-                <input type="text" id="name" name="name" required class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" id="name" name="name" value="<?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "User"; ?>"required class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
             <div class="flex flex-col md:flex-row items-center">
                 <label for="email" class="w-full md:w-1/3 mr-4 md:mr-0">Email:</label>
-                <input type="email" id="email" name="email" required class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="email" id="email" name="email" value="<?php echo isset($_SESSION["email"]) ? $_SESSION["email"] : "User"; ?>"required class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div><div class="flex flex-col md:flex-row items-center">
+                <label for="email" class="w-full md:w-1/3 mr-4 md:mr-0">Age:</label>
+                <input type="number" id="email" name="email" value="<?php echo isset($_SESSION["age"]) ? $_SESSION["age"] : "User"; ?>"required class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <label for="confirm_password" class="w-full md:w-1/3 mr-4 md:mr-0">Address</label>
+                <input type="text" id="address" name="address" <?php echo isset($_SESSION["address"]) ? $_SESSION["address"] : "User"; ?>required class="w-full md:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
             <div class="flex flex-col md:flex-row items-center">
                 <label for="password" class="w-full md:w-1/3 mr-4 md:mr-0">Password:</label>
